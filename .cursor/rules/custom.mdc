@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+- Use javascript (jsx or js) instead of typescript
+- Use regular vanilla css for styling

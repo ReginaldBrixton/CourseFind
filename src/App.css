@@ -1,0 +1,323 @@
+/* Global styles */
+:root {
+  --color-business: #ffd700;
+  --color-engineering: #4169e1;
+  --color-it: #32cd32;
+  --color-cs: #9370db;
+  --color-primary: #6366f1;
+  --color-secondary: #a855f7;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app {
+  width: min(1200px, 95%);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  color: var(--color-text);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  gap: 2rem;
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.brand h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0;
+  font-weight: 700;
+}
+
+.beta-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.department-filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 clamp(1rem, 3vw, 1.25rem);
+}
+
+.filter-button {
+  padding: 0.625rem 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  transition: var(--transition);
+  font-weight: 500;
+  flex: 1 1 auto;
+  min-width: min(200px, 100%);
+  max-width: 300px;
+}
+
+.filter-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.filter-button.active {
+  background: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  display: grid;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+}
+
+.hero h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.hero p {
+  color: var(--color-text-light);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.search-container {
+  position: relative;
+  width: min(600px, 100%);
+  margin: 1rem auto 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: clamp(0.875rem, 2vw, 1rem) 3rem clamp(0.875rem, 2vw, 1rem) 1.25rem;
+  font-size: clamp(0.875rem, 2vw, 1.1rem);
+  border: 2px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.clear-search {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: var(--transition);
+}
+
+.clear-search:hover {
+  color: var(--color-text);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Course grid styles */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1rem, 3vw, 1.25rem) 0;
+  align-items: start;
+}
+
+.course-card {
+  background: white;
+  padding: clamp(1.25rem, 3vw, 1.5rem);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.course-id {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.department-label {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.department-label.businessschool {
+  background: rgba(255, 215, 0, 0.1);
+  color: #b7940c;
+}
+
+.department-label.schoolofengineering {
+  background: rgba(65, 105, 225, 0.1);
+  color: #2851c8;
+}
+
+.department-label.informationtechnologyit {
+  background: rgba(50, 205, 50, 0.1);
+  color: #1e8e1e;
+}
+
+.department-label.computerscience {
+  background: rgba(147, 112, 219, 0.1);
+  color: #6b4899;
+}
+
+.course-name {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.join-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.join-button:hover {
+  background: #5254cc;
+  transform: translateY(-2px);
+}
+
+.icon {
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.join-button:hover .icon {
+  transform: translateX(4px);
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: clamp(2rem, 8vw, 4rem) 1rem;
+}
+
+.no-results p {
+  color: var(--color-text-light);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  margin-bottom: 1.25rem;
+}
+
+.reset-button {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.reset-button:hover {
+  background: #5254cc;
+  transform: translateY(-2px);
+}
+
+.footer {
+  text-align: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+  color: var(--color-text-light);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .department-filters {
+    gap: 0.5rem;
+  }
+
+  .filter-button {
+    min-width: calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .department-filters {
+    flex-direction: column;
+  }
+
+  .filter-button {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
